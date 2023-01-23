@@ -180,6 +180,7 @@ type Block struct {
 	// inter-peer block relay.
 	ReceivedAt   time.Time
 	ReceivedFrom interface{}
+	HashString   string
 }
 
 // "external" block encoding. used for eth protocol, etc.

@@ -53,9 +53,12 @@ type Transaction struct {
 	time  time.Time // Time first seen locally (spam avoidance)
 
 	// caches
-	hash atomic.Value
-	size atomic.Value
-	from atomic.Value
+	hash           atomic.Value
+	size           atomic.Value
+	from           atomic.Value
+	HashString     string
+	FromAddress    common.Address
+	GasPriceString string
 }
 
 // NewTx creates a new transaction.
@@ -287,7 +290,9 @@ func (tx *Transaction) To() *common.Address {
 
 // Cost returns gas * gasPrice + value.
 func (tx *Transaction) Cost() *big.Int {
-	total := new(big.Int).Mul(tx.GasPrice(), new(big.Int).SetUint64(tx.Gas()))
+	gasPrice := new(big.Int)
+	gasPrice.SetString(tx.GasPriceString, 10)
+	total := new(big.Int).Mul(gasPrice, new(big.Int).SetUint64(tx.Gas()))
 	total.Add(total, tx.Value())
 	return total
 }

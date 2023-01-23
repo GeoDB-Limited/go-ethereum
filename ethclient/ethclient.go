@@ -100,6 +100,43 @@ type rpcBlock struct {
 	UncleHashes  []common.Hash    `json:"uncles"`
 }
 
+type modedBlock struct {
+	Hash         common.Hash           `json:"hash"`
+	Transactions []modedRpcTransaction `json:"transactions"`
+	UncleHashes  []common.Hash         `json:"uncles"`
+}
+
+type stringModedBlock struct {
+	Hash         string                `json:"hash"`
+	Transactions []modedRpcTransaction `json:"transactions"`
+	UncleHashes  []common.Hash         `json:"uncles"`
+}
+
+type modedTransaction struct {
+	Hash     string
+	From     string
+	GasPrice string
+}
+
+type TxData interface {
+	txType() byte // returns the type ID
+	copy() TxData // creates a deep copy and initializes all fields
+
+	chainID() *big.Int
+	accessList() types.AccessList
+	data() []byte
+	gas() uint64
+	gasPrice() *big.Int
+	gasTipCap() *big.Int
+	gasFeeCap() *big.Int
+	value() *big.Int
+	nonce() uint64
+	to() *common.Address
+
+	rawSignatureValues() (v, r, s *big.Int)
+	setSignatureValues(chainID, v, r, s *big.Int)
+}
+
 func (ec *Client) getBlock(ctx context.Context, method string, args ...interface{}) (*types.Block, error) {
 	var raw json.RawMessage
 	err := ec.c.CallContext(ctx, &raw, method, args...)
@@ -117,15 +154,23 @@ func (ec *Client) getBlock(ctx context.Context, method string, args ...interface
 	if err := json.Unmarshal(raw, &body); err != nil {
 		return nil, err
 	}
+
+	var dat modedBlock
+	if err := json.Unmarshal(raw, &dat); err != nil {
+		panic(err)
+	}
+
+	var bat stringModedBlock
+	if err := json.Unmarshal(raw, &bat); err != nil {
+		panic(err)
+	}
+
 	// Quick-verify transaction and uncle lists. This mostly helps with debugging the server.
 	if head.UncleHash == types.EmptyUncleHash && len(body.UncleHashes) > 0 {
 		return nil, fmt.Errorf("server returned non-empty uncle list but block header indicates no uncles")
 	}
 	if head.UncleHash != types.EmptyUncleHash && len(body.UncleHashes) == 0 {
 		return nil, fmt.Errorf("server returned empty uncle list but block header indicates uncles")
-	}
-	if head.TxHash == types.EmptyRootHash && len(body.Transactions) > 0 {
-		return nil, fmt.Errorf("server returned non-empty transaction list but block header indicates no transactions")
 	}
 	if head.TxHash != types.EmptyRootHash && len(body.Transactions) == 0 {
 		return nil, fmt.Errorf("server returned empty transaction list but block header indicates transactions")
@@ -161,8 +206,16 @@ func (ec *Client) getBlock(ctx context.Context, method string, args ...interface
 			setSenderFromServer(tx.tx, *tx.From, body.Hash)
 		}
 		txs[i] = tx.tx
+		txs[i].HashString = dat.Transactions[i].tx.Hash
+		txs[i].FromAddress = common.HexToAddress(dat.Transactions[i].tx.From)
+
+		gasPrice := new(big.Int)
+		gasPrice.SetString(dat.Transactions[i].tx.GasPrice[2:], 16)
+		txs[i].GasPriceString = gasPrice.String()
 	}
-	return types.NewBlockWithHeader(head).WithBody(txs, uncles), nil
+	var newBlock *types.Block = types.NewBlockWithHeader(head).WithBody(txs, uncles)
+	newBlock.HashString = bat.Hash
+	return newBlock, nil
 }
 
 // HeaderByHash returns the block header with the given hash.
@@ -187,7 +240,14 @@ func (ec *Client) HeaderByNumber(ctx context.Context, number *big.Int) (*types.H
 }
 
 type rpcTransaction struct {
-	tx *types.Transaction
+	rawInfo []byte
+	tx      *types.Transaction
+	txExtraInfo
+}
+
+type modedRpcTransaction struct {
+	rawInfo []byte
+	tx      *modedTransaction
 	txExtraInfo
 }
 
@@ -201,6 +261,15 @@ func (tx *rpcTransaction) UnmarshalJSON(msg []byte) error {
 	if err := json.Unmarshal(msg, &tx.tx); err != nil {
 		return err
 	}
+	tx.rawInfo = msg
+	return json.Unmarshal(msg, &tx.txExtraInfo)
+}
+
+func (tx *modedRpcTransaction) UnmarshalJSON(msg []byte) error {
+	if err := json.Unmarshal(msg, &tx.tx); err != nil {
+		return err
+	}
+	tx.rawInfo = msg
 	return json.Unmarshal(msg, &tx.txExtraInfo)
 }
 
@@ -239,10 +308,15 @@ func (ec *Client) TransactionSender(ctx context.Context, tx *types.Transaction, 
 		Hash common.Hash
 		From common.Address
 	}
+	fmt.Println(block.Hex())
 	if err = ec.c.CallContext(ctx, &meta, "eth_getTransactionByBlockHashAndIndex", block, hexutil.Uint64(index)); err != nil {
 		return common.Address{}, err
 	}
-	if meta.Hash == (common.Hash{}) || meta.Hash != tx.Hash() {
+	fmt.Println(meta.From.Hex())
+	fmt.Println(meta.Hash.Hex())
+	fmt.Println(tx.Hash().Hex())
+	fmt.Println(tx.HashString)
+	if meta.Hash == (common.Hash{}) || meta.Hash != common.HexToHash(tx.HashString) {
 		return common.Address{}, errors.New("wrong inclusion block/index")
 	}
 	return meta.From, nil
