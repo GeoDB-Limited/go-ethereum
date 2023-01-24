@@ -21,9 +21,9 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/GeoDB-Limited/go-ethereum/log"
+	"github.com/GeoDB-Limited/go-ethereum/p2p/dnsdisc"
 	"github.com/cloudflare/cloudflare-go"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/dnsdisc"
 	"gopkg.in/urfave/cli.v1"
 )
 

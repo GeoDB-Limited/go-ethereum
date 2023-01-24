@@ -30,12 +30,12 @@ import (
 	"sync"
 	"syscall"
 
+	"github.com/GeoDB-Limited/go-ethereum/console/prompt"
+	"github.com/GeoDB-Limited/go-ethereum/internal/jsre"
+	"github.com/GeoDB-Limited/go-ethereum/internal/jsre/deps"
+	"github.com/GeoDB-Limited/go-ethereum/internal/web3ext"
+	"github.com/GeoDB-Limited/go-ethereum/rpc"
 	"github.com/dop251/goja"
-	"github.com/ethereum/go-ethereum/console/prompt"
-	"github.com/ethereum/go-ethereum/internal/jsre"
-	"github.com/ethereum/go-ethereum/internal/jsre/deps"
-	"github.com/ethereum/go-ethereum/internal/web3ext"
-	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/mattn/go-colorable"
 	"github.com/peterh/liner"
 )

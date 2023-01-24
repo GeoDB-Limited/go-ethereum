@@ -21,9 +21,9 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/forkid"
-	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/GeoDB-Limited/go-ethereum/common"
+	"github.com/GeoDB-Limited/go-ethereum/core/forkid"
+	"github.com/GeoDB-Limited/go-ethereum/p2p"
 )
 
 const (

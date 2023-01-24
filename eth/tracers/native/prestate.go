@@ -22,12 +22,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth/tracers"
+	"github.com/GeoDB-Limited/go-ethereum/common"
+	"github.com/GeoDB-Limited/go-ethereum/common/hexutil"
+	"github.com/GeoDB-Limited/go-ethereum/core"
+	"github.com/GeoDB-Limited/go-ethereum/core/vm"
+	"github.com/GeoDB-Limited/go-ethereum/crypto"
+	"github.com/GeoDB-Limited/go-ethereum/eth/tracers"
 )
 
 func init() {

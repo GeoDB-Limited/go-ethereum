@@ -19,15 +19,15 @@ package main
 import (
 	"strconv"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/ethereum/go-ethereum/accounts/external"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/contracts/checkpointoracle"
-	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/GeoDB-Limited/go-ethereum/accounts"
+	"github.com/GeoDB-Limited/go-ethereum/accounts/abi/bind"
+	"github.com/GeoDB-Limited/go-ethereum/accounts/external"
+	"github.com/GeoDB-Limited/go-ethereum/cmd/utils"
+	"github.com/GeoDB-Limited/go-ethereum/common"
+	"github.com/GeoDB-Limited/go-ethereum/contracts/checkpointoracle"
+	"github.com/GeoDB-Limited/go-ethereum/ethclient"
+	"github.com/GeoDB-Limited/go-ethereum/params"
+	"github.com/GeoDB-Limited/go-ethereum/rpc"
 	"gopkg.in/urfave/cli.v1"
 )
 

@@ -21,11 +21,11 @@ import (
 	"math/rand"
 	"sync"
 
+	"github.com/GeoDB-Limited/go-ethereum/common"
+	"github.com/GeoDB-Limited/go-ethereum/core/types"
+	"github.com/GeoDB-Limited/go-ethereum/p2p"
+	"github.com/GeoDB-Limited/go-ethereum/rlp"
 	mapset "github.com/deckarep/golang-set"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/rlp"
 )
 
 const (

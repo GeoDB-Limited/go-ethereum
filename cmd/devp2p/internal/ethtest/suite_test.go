@@ -21,11 +21,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/internal/utesting"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/GeoDB-Limited/go-ethereum/eth"
+	"github.com/GeoDB-Limited/go-ethereum/eth/ethconfig"
+	"github.com/GeoDB-Limited/go-ethereum/internal/utesting"
+	"github.com/GeoDB-Limited/go-ethereum/node"
+	"github.com/GeoDB-Limited/go-ethereum/p2p"
 )
 
 var (

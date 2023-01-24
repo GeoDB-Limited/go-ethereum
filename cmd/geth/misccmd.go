@@ -23,9 +23,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/GeoDB-Limited/go-ethereum/cmd/utils"
+	"github.com/GeoDB-Limited/go-ethereum/consensus/ethash"
+	"github.com/GeoDB-Limited/go-ethereum/params"
 	"gopkg.in/urfave/cli.v1"
 )
 

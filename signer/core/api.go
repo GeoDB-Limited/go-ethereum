@@ -25,17 +25,17 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/accounts/scwallet"
-	"github.com/ethereum/go-ethereum/accounts/usbwallet"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/ethereum/go-ethereum/signer/core/apitypes"
-	"github.com/ethereum/go-ethereum/signer/storage"
+	"github.com/GeoDB-Limited/go-ethereum/accounts"
+	"github.com/GeoDB-Limited/go-ethereum/accounts/keystore"
+	"github.com/GeoDB-Limited/go-ethereum/accounts/scwallet"
+	"github.com/GeoDB-Limited/go-ethereum/accounts/usbwallet"
+	"github.com/GeoDB-Limited/go-ethereum/common"
+	"github.com/GeoDB-Limited/go-ethereum/common/hexutil"
+	"github.com/GeoDB-Limited/go-ethereum/internal/ethapi"
+	"github.com/GeoDB-Limited/go-ethereum/log"
+	"github.com/GeoDB-Limited/go-ethereum/rpc"
+	"github.com/GeoDB-Limited/go-ethereum/signer/core/apitypes"
+	"github.com/GeoDB-Limited/go-ethereum/signer/storage"
 )
 
 const (

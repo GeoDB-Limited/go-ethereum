@@ -20,12 +20,12 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/ethereum/go-ethereum/cmd/devp2p/internal/ethtest"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/internal/utesting"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/rlpx"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/GeoDB-Limited/go-ethereum/cmd/devp2p/internal/ethtest"
+	"github.com/GeoDB-Limited/go-ethereum/crypto"
+	"github.com/GeoDB-Limited/go-ethereum/internal/utesting"
+	"github.com/GeoDB-Limited/go-ethereum/p2p"
+	"github.com/GeoDB-Limited/go-ethereum/p2p/rlpx"
+	"github.com/GeoDB-Limited/go-ethereum/rlp"
 	"gopkg.in/urfave/cli.v1"
 )
 

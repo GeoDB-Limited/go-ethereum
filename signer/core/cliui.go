@@ -24,10 +24,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/console/prompt"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/GeoDB-Limited/go-ethereum/common/hexutil"
+	"github.com/GeoDB-Limited/go-ethereum/console/prompt"
+	"github.com/GeoDB-Limited/go-ethereum/internal/ethapi"
+	"github.com/GeoDB-Limited/go-ethereum/log"
 )
 
 type CommandlineUI struct {

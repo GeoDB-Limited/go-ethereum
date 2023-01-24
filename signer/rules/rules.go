@@ -22,12 +22,12 @@ import (
 	"os"
 	"strings"
 
+	"github.com/GeoDB-Limited/go-ethereum/internal/ethapi"
+	"github.com/GeoDB-Limited/go-ethereum/internal/jsre/deps"
+	"github.com/GeoDB-Limited/go-ethereum/log"
+	"github.com/GeoDB-Limited/go-ethereum/signer/core"
+	"github.com/GeoDB-Limited/go-ethereum/signer/storage"
 	"github.com/dop251/goja"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/jsre/deps"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/storage"
 )
 
 var (
