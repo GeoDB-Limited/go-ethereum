@@ -24,14 +24,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/GeoDB-Limited/go-ethereum/common"
+	"github.com/GeoDB-Limited/go-ethereum/consensus/ethash"
+	"github.com/GeoDB-Limited/go-ethereum/core"
+	"github.com/GeoDB-Limited/go-ethereum/core/rawdb"
+	"github.com/GeoDB-Limited/go-ethereum/core/types"
+	"github.com/GeoDB-Limited/go-ethereum/log"
+	"github.com/GeoDB-Limited/go-ethereum/params"
+	"github.com/GeoDB-Limited/go-ethereum/trie"
 )
 
 var (

@@ -23,10 +23,10 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/ethdb/memorydb"
+	"github.com/GeoDB-Limited/go-ethereum/common"
+	"github.com/GeoDB-Limited/go-ethereum/crypto"
+	"github.com/GeoDB-Limited/go-ethereum/ethdb"
+	"github.com/GeoDB-Limited/go-ethereum/ethdb/memorydb"
 )
 
 func TestEmptyIterator(t *testing.T) {

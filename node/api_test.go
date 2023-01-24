@@ -25,7 +25,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/GeoDB-Limited/go-ethereum/rpc"
 	"github.com/stretchr/testify/assert"
 )
 

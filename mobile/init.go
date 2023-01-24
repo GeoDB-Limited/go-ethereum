@@ -22,7 +22,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/GeoDB-Limited/go-ethereum/log"
 )
 
 func init() {

@@ -30,7 +30,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/GeoDB-Limited/go-ethereum/params"
 )
 
 var (

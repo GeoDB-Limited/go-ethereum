@@ -23,12 +23,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/les/flowcontrol"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/GeoDB-Limited/go-ethereum/common/mclock"
+	"github.com/GeoDB-Limited/go-ethereum/eth/ethconfig"
+	"github.com/GeoDB-Limited/go-ethereum/ethdb"
+	"github.com/GeoDB-Limited/go-ethereum/les/flowcontrol"
+	"github.com/GeoDB-Limited/go-ethereum/log"
+	"github.com/GeoDB-Limited/go-ethereum/metrics"
 )
 
 const makeCostStats = false // make request cost statistics during operation

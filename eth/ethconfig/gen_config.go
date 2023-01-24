@@ -6,13 +6,13 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/eth/gasprice"
-	"github.com/ethereum/go-ethereum/miner"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/GeoDB-Limited/go-ethereum/common"
+	"github.com/GeoDB-Limited/go-ethereum/consensus/ethash"
+	"github.com/GeoDB-Limited/go-ethereum/core"
+	"github.com/GeoDB-Limited/go-ethereum/eth/downloader"
+	"github.com/GeoDB-Limited/go-ethereum/eth/gasprice"
+	"github.com/GeoDB-Limited/go-ethereum/miner"
+	"github.com/GeoDB-Limited/go-ethereum/params"
 )
 
 // MarshalTOML marshals as TOML.

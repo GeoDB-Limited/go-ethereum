@@ -28,11 +28,11 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/GeoDB-Limited/go-ethereum/crypto"
+	"github.com/GeoDB-Limited/go-ethereum/crypto/ecies"
+	"github.com/GeoDB-Limited/go-ethereum/p2p/simulations/pipes"
+	"github.com/GeoDB-Limited/go-ethereum/rlp"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/crypto/ecies"
-	"github.com/ethereum/go-ethereum/p2p/simulations/pipes"
-	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/stretchr/testify/assert"
 )
 

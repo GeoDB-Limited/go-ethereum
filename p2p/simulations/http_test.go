@@ -29,13 +29,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/simulations/adapters"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/GeoDB-Limited/go-ethereum/event"
+	"github.com/GeoDB-Limited/go-ethereum/log"
+	"github.com/GeoDB-Limited/go-ethereum/node"
+	"github.com/GeoDB-Limited/go-ethereum/p2p"
+	"github.com/GeoDB-Limited/go-ethereum/p2p/enode"
+	"github.com/GeoDB-Limited/go-ethereum/p2p/simulations/adapters"
+	"github.com/GeoDB-Limited/go-ethereum/rpc"
 	"github.com/mattn/go-colorable"
 )
 
